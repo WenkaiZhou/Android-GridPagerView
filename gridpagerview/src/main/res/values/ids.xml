@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tag_clickable_grid_view_adapter_holder" type="id" />
+    <item name="tag_clickable_grid_view_adapter_data" type="id" />
+    <item name="tag_clickable_grid_view_adapter_position" type="id" />
+</resources>
