@@ -1,4 +1,4 @@
-package com.kevin.gridpage.sample
+package com.kevin.gridpager.sample
 
 import org.junit.Test
 
