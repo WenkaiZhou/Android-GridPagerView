@@ -19,13 +19,12 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/dots"
+        <com.kevin.gridpager.sample.IndicatorView
+            android:id="@+id/indicator_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="39dp"
-            android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cate_page" />
@@ -39,7 +38,7 @@
             app:layout_constraintWidth_percent="0.3"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/cl_rows"
-            app:layout_constraintTop_toBottomOf="@+id/dots">
+            app:layout_constraintTop_toBottomOf="@+id/indicator_view">
 
             <TextView
                 android:id="@+id/tv_column"
@@ -89,7 +88,7 @@
             app:layout_constraintWidth_percent="0.3"
             app:layout_constraintLeft_toRightOf="@+id/cl_columns"
             app:layout_constraintRight_toLeftOf="@+id/cl_totals"
-            app:layout_constraintTop_toBottomOf="@+id/dots">
+            app:layout_constraintTop_toBottomOf="@+id/indicator_view">
 
             <TextView
                 android:id="@+id/tv_row"
@@ -141,7 +140,7 @@
             app:layout_constraintWidth_percent="0.4"
             app:layout_constraintLeft_toRightOf="@+id/cl_rows"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dots">
+            app:layout_constraintTop_toBottomOf="@+id/indicator_view">
 
             <TextView
                 android:id="@+id/tv_total"

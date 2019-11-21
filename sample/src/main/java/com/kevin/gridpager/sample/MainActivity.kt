@@ -1,29 +1,40 @@
+/*
+ * Copyright (c) 2019 Kevin zhou
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.kevin.gridpager.sample
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
 import com.kevin.gridpager.GridViewPager
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var gridViewPager: GridViewPager
-    private lateinit var dotsView: LinearLayout
-    private var currentPosition = 0
+    private lateinit var indicatorView: IndicatorView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         gridViewPager = findViewById(R.id.cate_page)
-        dotsView = findViewById(R.id.dots)
+        indicatorView = findViewById(R.id.indicator_view)
         gridViewPager.setGridViewAdapter(CategoryItemAdapter())
 
-        initIndicator()
+        indicatorView.setupViewPager(gridViewPager)
         initData(20)
     }
 
@@ -34,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             list.add(categoryLevel1Bean)
         }
         gridViewPager.setData(list)
-        initDots(gridViewPager.adapter!!.count, gridViewPager.currentItem)
+        indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)
     }
 
     fun onColumnClick(view: View) {
@@ -47,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onSelect(data: Int) {
                     columnView.text = data.toString()
                     gridViewPager.setPageColumns(data)
-                    initDots(gridViewPager.adapter!!.count, gridViewPager.currentItem)
+                    indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)
                 }
 
             })
@@ -63,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onSelect(data: Int) {
                     rowView.text = data.toString()
                     gridViewPager.setPageRows(data)
-                    initDots(gridViewPager.adapter!!.count, gridViewPager.currentItem)
+                    indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)
                 }
             })
     }
@@ -82,36 +93,4 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    /**
-     * 初始化指示器
-     */
-    private fun initIndicator() { // 指示器选中
-        gridViewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
-            override fun onPageSelected(position: Int) {
-                dotsView.getChildAt(position).isEnabled = true
-                dotsView.getChildAt(position).requestLayout()
-                if (currentPosition != -1) {
-                    dotsView.getChildAt(currentPosition).isEnabled = false
-                    dotsView.getChildAt(currentPosition).requestLayout()
-                }
-                currentPosition = position
-            }
-        })
-    }
-
-    private fun initDots(size: Int, index: Int) {
-        val dotsView: LinearLayout = findViewById(R.id.dots)
-        dotsView.removeAllViews()
-        for (i in 0 until size) {
-            val dot = ImageView(this)
-            dot.setBackgroundResource(R.drawable.selector_guide_dots)
-            val dotWidth = LinearLayout.LayoutParams.WRAP_CONTENT
-            val dotHeight = LinearLayout.LayoutParams.WRAP_CONTENT
-            val dotParams =
-                LinearLayout.LayoutParams(dotWidth, dotHeight)
-            dotParams.setMargins(4, 0, 4, 0)
-            dot.isEnabled = i == index
-            dotsView.addView(dot, dotParams)
-        }
-    }
 }
