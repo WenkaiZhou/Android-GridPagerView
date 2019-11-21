@@ -35,6 +35,10 @@ class GridViewPager @JvmOverloads constructor(
     private val adapter: GridPagerAdapter = GridPagerAdapter()
 
     init {
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.GridViewPager)
+        val pageColumns = ta.getInt(R.styleable.GridViewPager_gvp_pageColumns, DEFAULT_PAGE_COLUMN)
+        val pageRows = ta.getInt(R.styleable.GridViewPager_gvp_pageRows, DEFAULT_PAGE_ROW)
+        adapter.setPageColumnsAndRows(pageColumns, pageRows)
         setAdapter(adapter)
     }
 
@@ -46,7 +50,7 @@ class GridViewPager @JvmOverloads constructor(
         adapter.setPageRows(rows)
     }
 
-    fun setData(dataList: List<*>) {
+    fun setData(dataList: MutableList<*>) {
         adapter.setData(dataList)
     }
 
@@ -67,6 +71,11 @@ class GridViewPager @JvmOverloads constructor(
         }
         val newHeightMeasureSpec = MeasureSpec.makeMeasureSpec(maxHeight, MeasureSpec.EXACTLY)
         super.onMeasure(widthMeasureSpec, newHeightMeasureSpec)
+    }
+
+    companion object {
+        private const val DEFAULT_PAGE_COLUMN = 4
+        private const val DEFAULT_PAGE_ROW = 2
     }
 
 }

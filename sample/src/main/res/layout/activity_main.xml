@@ -11,6 +11,8 @@
         <com.kevin.gridpager.GridViewPager
             android:id="@+id/cate_page"
             android:layout_width="0dp"
+            app:gvp_pageColumns="4"
+            app:gvp_pageRows="2"
             android:layout_height="wrap_content"
             android:overScrollMode="never"
             app:layout_constraintLeft_toLeftOf="parent"

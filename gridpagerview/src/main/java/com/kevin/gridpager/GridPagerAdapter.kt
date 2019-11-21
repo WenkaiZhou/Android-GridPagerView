@@ -42,9 +42,9 @@ internal class GridPagerAdapter : PagerAdapter() {
     private lateinit var gridAdapter: GridViewAdapter<Any, RecyclerView.ViewHolder>
     private val recycledViewPool: RecyclerView.RecycledViewPool = RecyclerView.RecycledViewPool()
 
-    init {
-        this.pageColumns = DEFAULT_PAGE_COLUMN
-        this.pageRows = DEFAULT_PAGE_ROW
+    fun setPageColumnsAndRows(columns: Int, rows: Int) {
+        this.pageColumns = columns
+        this.pageRows = rows
         resetPageSize()
     }
 
@@ -106,7 +106,7 @@ internal class GridPagerAdapter : PagerAdapter() {
         return POSITION_NONE
     }
 
-    fun setData(dataList: List<*>) {
+    fun setData(dataList: MutableList<*>) {
         this.dataList.clear()
         this.dataList.addAll(dataList.filterNotNull())
         notifyDataSetChanged()
@@ -168,10 +168,5 @@ internal class GridPagerAdapter : PagerAdapter() {
         override fun getItemCount(): Int {
             return pageDataList.size
         }
-    }
-
-    companion object {
-        private const val DEFAULT_PAGE_COLUMN = 4
-        private const val DEFAULT_PAGE_ROW = 2
     }
 }
