@@ -1,2 +1,2 @@
 include ':sample'
-rootProject.name='GridPagerView'
+rootProject.name='Android-GridPagerView'
