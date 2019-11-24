@@ -38,18 +38,11 @@ implementation 'com.kevin:gridpagerview:1.0.0'
 class CategoryAdapter : ClickableGridViewAdapter<Category, CommonCategoryAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.layout_common_category_item, parent, false)
-        view.findViewById<ImageView>(R.id.iv_image).setBackgroundColor(getBackgroundColor())
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_common_category_item, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(
-        holder: ViewHolder,
-        position: Int,
-        pagePosition: Int,
-        item: Category
-    ) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int, pagePosition: Int, item: Category) {
         super.onBindViewHolder(holder, position, pagePosition, item)
         holder.tvName.text = item.name
     }
