@@ -72,7 +72,7 @@ abstract class BindingGridViewAdapter<T> : ClickableGridViewAdapter<T, BindingVi
      *
      *
      * example：
-     * binding.setVariable(BR.viewModel, mViewModel);
+     * binding.setVariable(BR.viewModel, viewModel);
      *
      * @param binding
      * @param item

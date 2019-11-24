@@ -20,6 +20,9 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.kevin.gridpager.GridViewPager
+import com.kevin.gridpager.sample.binding.BindingCategoryAdapter
+import com.kevin.gridpager.sample.common.CommonCategoryAdapter
+import com.kevin.gridpager.sample.entity.Category
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,17 +35,19 @@ class MainActivity : AppCompatActivity() {
 
         gridViewPager = findViewById(R.id.cate_page)
         indicatorView = findViewById(R.id.indicator_view)
-        gridViewPager.setGridViewAdapter(CategoryItemAdapter())
+        // 通常的Adapter方式
+        gridViewPager.setGridViewAdapter(CommonCategoryAdapter())
+        // dataBinding的方式
+//        gridViewPager.setGridViewAdapter(BindingCategoryAdapter())
 
         indicatorView.setupViewPager(gridViewPager)
         initData(20)
     }
 
     private fun initData(count: Int) {
-        val list: MutableList<CategoryBean> = mutableListOf()
+        val list: MutableList<Category> = mutableListOf()
         for (i in 0 until count) {
-            val categoryLevel1Bean = CategoryBean("条目 $i")
-            list.add(categoryLevel1Bean)
+            list.add(Category("item $i"))
         }
         gridViewPager.setData(list)
         indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)

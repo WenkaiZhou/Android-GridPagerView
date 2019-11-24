@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.kevin.gridpager.sample
+package com.kevin.gridpager.sample.entity
 
 /**
- * CategoryLevel1Bean
+ * Category
  *
  * @author zwenkai@foxmail.com, Created on 2019-05-03 10:59:01
- * Major Function：****
+ * Major Function：<b>分类条目</b>
  *
  *
  * Note: If you modify this class please fill in the following content as a record.
  * @author mender，Modified Date Modify Content:
  */
-data class CategoryBean(
+data class Category(
     val name: String
 )
