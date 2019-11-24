@@ -58,7 +58,7 @@ class CategoryAdapter : ClickableGridViewAdapter<Category, CommonCategoryAdapter
 }
 ```
 
-3. 初始化 `GridViewPager`
+### 初始化 GridViewPager
 
 ```kotlin
 gridViewPager.setGridViewAdapter(CategoryAdapter())
