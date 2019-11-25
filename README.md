@@ -24,7 +24,7 @@ implementation 'com.kevin:gridpagerview:1.0.0'
 
 ```xml
 <com.kevin.gridpager.GridPagerView
-    android:id="@+id/cate_page"
+    android:id="@+id/grid_pager"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:overScrollMode="never"/>

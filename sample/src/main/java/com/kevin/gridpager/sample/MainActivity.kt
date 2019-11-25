@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        gridPagerView = findViewById(R.id.cate_page)
+        gridPagerView = findViewById(R.id.grid_pager)
         indicatorView = findViewById(R.id.indicator_view)
         // 通常的Adapter方式
         gridPagerView.setGridViewAdapter(CommonCategoryAdapter())

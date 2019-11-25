@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <com.kevin.gridpager.GridPagerView
-            android:id="@+id/cate_page"
+            android:id="@+id/grid_pager"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:overScrollMode="never"
