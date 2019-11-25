@@ -92,7 +92,7 @@ gridPagerView.setPageColumns(columns)
 // 设置单页行数
 gridPagerView.setPageRows(rows)
 // 设置数据
-gridPagerView.setData(list)
+gridPagerView.setDataItems(list)
 ```
 
 ## License
