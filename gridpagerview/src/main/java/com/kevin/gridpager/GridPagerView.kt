@@ -20,7 +20,7 @@ import android.util.AttributeSet
 import androidx.viewpager.widget.ViewPager
 
 /**
- * GridViewPager
+ * GridPagerView
  *
  * @author zwenkai@foxmail.com, Created on 2019-05-03 10:13:40
  * Major Function：<b>GridViewPager</b>
@@ -28,16 +28,16 @@ import androidx.viewpager.widget.ViewPager
  * Note: If you modify this class please fill in the following content as a record.
  * @author mender，Modified Date Modify Content:
  */
-class GridViewPager @JvmOverloads constructor(
+class GridPagerView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : ViewPager(context, attrs) {
 
     private val adapter: GridPagerAdapter = GridPagerAdapter()
 
     init {
-        val ta = context.obtainStyledAttributes(attrs, R.styleable.GridViewPager)
-        val pageColumns = ta.getInt(R.styleable.GridViewPager_gvp_pageColumns, DEFAULT_PAGE_COLUMN)
-        val pageRows = ta.getInt(R.styleable.GridViewPager_gvp_pageRows, DEFAULT_PAGE_ROW)
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.GridPagerView)
+        val pageColumns = ta.getInt(R.styleable.GridPagerView_gpv_pageColumns, DEFAULT_PAGE_COLUMN)
+        val pageRows = ta.getInt(R.styleable.GridPagerView_gpv_pageRows, DEFAULT_PAGE_ROW)
         adapter.setPageColumnsAndRows(pageColumns, pageRows)
         setAdapter(adapter)
     }
@@ -50,8 +50,8 @@ class GridViewPager @JvmOverloads constructor(
         adapter.setPageRows(rows)
     }
 
-    fun setData(dataList: MutableList<*>) {
-        adapter.setData(dataList)
+    fun setDataItems(dataItems: MutableList<*>) {
+        adapter.setDataItems(dataItems)
     }
 
     fun setGridViewAdapter(adapter: GridViewAdapter<*, *>) {

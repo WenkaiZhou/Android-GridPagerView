@@ -14,7 +14,7 @@ import java.util.*
 /**
  * BindingCategoryAdapter
  *
- * @author zhouwenkai@baidu.com, Created on 2019-11-24 10:40:37
+ * @author zwenkai@foxmail.com, Created on 2019-11-24 10:40:37
  *         Major Function：<b>条目Adapter</b>
  *         <p/>
  *         Note: If you modify this class please fill in the following content as a record.

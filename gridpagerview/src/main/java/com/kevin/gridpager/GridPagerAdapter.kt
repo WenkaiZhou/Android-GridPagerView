@@ -38,7 +38,7 @@ internal class GridPagerAdapter : PagerAdapter() {
     private var pageRows: Int = 0
     private var pageSize: Int = 0
 
-    private var dataList: MutableList<Any> = mutableListOf()
+    private var dataItems: MutableList<Any> = mutableListOf()
     private lateinit var gridAdapter: GridViewAdapter<Any, RecyclerView.ViewHolder>
     private val recycledViewPool: RecyclerView.RecycledViewPool = RecyclerView.RecycledViewPool()
 
@@ -75,7 +75,7 @@ internal class GridPagerAdapter : PagerAdapter() {
     }
 
     override fun getCount(): Int {
-        return ceil(dataList.size.toDouble() / pageSize).toInt()
+        return ceil(dataItems.size.toDouble() / pageSize).toInt()
     }
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
@@ -106,9 +106,9 @@ internal class GridPagerAdapter : PagerAdapter() {
         return POSITION_NONE
     }
 
-    fun setData(dataList: MutableList<*>) {
-        this.dataList.clear()
-        this.dataList.addAll(dataList.filterNotNull())
+    fun setDataItems(dataItems: MutableList<*>) {
+        this.dataItems.clear()
+        this.dataItems.addAll(dataItems.filterNotNull())
         notifyDataSetChanged()
     }
 
@@ -128,15 +128,15 @@ internal class GridPagerAdapter : PagerAdapter() {
             toIndex = 0
         }
 
-        if (fromIndex > dataList.size) {
-            fromIndex = dataList.size
+        if (fromIndex > dataItems.size) {
+            fromIndex = dataItems.size
         }
 
-        if (toIndex > dataList.size) {
-            toIndex = dataList.size
+        if (toIndex > dataItems.size) {
+            toIndex = dataItems.size
         }
 
-        return dataList.subList(fromIndex, toIndex)
+        return dataItems.subList(fromIndex, toIndex)
     }
 
     private inner class RecyclerViewAdapter internal constructor(
@@ -144,11 +144,11 @@ internal class GridPagerAdapter : PagerAdapter() {
         private val realAdapter: GridViewAdapter<Any, RecyclerView.ViewHolder>
     ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-        private var pageDataList: MutableList<Any> = mutableListOf()
+        private var pageDataItems: MutableList<Any> = mutableListOf()
 
         internal fun setData(dataList: List<Any>) {
-            this.pageDataList.clear()
-            this.pageDataList.addAll(dataList)
+            this.pageDataItems.clear()
+            this.pageDataItems.addAll(dataList)
             notifyDataSetChanged()
         }
 
@@ -161,12 +161,12 @@ internal class GridPagerAdapter : PagerAdapter() {
                 holder,
                 positionOffset + position,
                 position,
-                pageDataList[position]
+                pageDataItems[position]
             )
         }
 
         override fun getItemCount(): Int {
-            return pageDataList.size
+            return pageDataItems.size
         }
     }
 }

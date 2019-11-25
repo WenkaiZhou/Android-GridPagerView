@@ -20,7 +20,6 @@ import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.viewpager.widget.ViewPager
-import com.kevin.gridpager.GridViewPager
 
 /**
  * IndicatorView
@@ -41,7 +40,7 @@ class IndicatorView @JvmOverloads constructor(
         orientation = HORIZONTAL
     }
 
-    fun setupViewPager(viewPager: GridViewPager) {
+    fun setupViewPager(viewPager: ViewPager) {
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
                 setSelected(position)

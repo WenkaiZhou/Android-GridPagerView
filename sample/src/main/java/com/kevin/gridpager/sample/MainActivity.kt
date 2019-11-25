@@ -19,28 +19,28 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.kevin.gridpager.GridViewPager
+import com.kevin.gridpager.GridPagerView
 import com.kevin.gridpager.sample.binding.BindingCategoryAdapter
 import com.kevin.gridpager.sample.common.CommonCategoryAdapter
 import com.kevin.gridpager.sample.entity.Category
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var gridViewPager: GridViewPager
+    private lateinit var gridPagerView: GridPagerView
     private lateinit var indicatorView: IndicatorView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        gridViewPager = findViewById(R.id.cate_page)
+        gridPagerView = findViewById(R.id.cate_page)
         indicatorView = findViewById(R.id.indicator_view)
         // 通常的Adapter方式
-        gridViewPager.setGridViewAdapter(CommonCategoryAdapter())
+        gridPagerView.setGridViewAdapter(CommonCategoryAdapter())
         // dataBinding的方式
-//        gridViewPager.setGridViewAdapter(BindingCategoryAdapter())
+//        gridPagerView.setGridViewAdapter(BindingCategoryAdapter())
 
-        indicatorView.setupViewPager(gridViewPager)
+        indicatorView.setupViewPager(gridPagerView)
         initData(20)
     }
 
@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until count) {
             list.add(Category("item $i"))
         }
-        gridViewPager.setData(list)
-        indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)
+        gridPagerView.setDataItems(list)
+        indicatorView.initIndicator(gridPagerView.adapter!!.count, gridPagerView.currentItem)
     }
 
     fun onColumnClick(view: View) {
@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity() {
             .show(this, object : SelectorDialog.OnSelectListener {
                 override fun onSelect(data: Int) {
                     columnView.text = data.toString()
-                    gridViewPager.setPageColumns(data)
-                    indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)
+                    gridPagerView.setPageColumns(data)
+                    indicatorView.initIndicator(gridPagerView.adapter!!.count, gridPagerView.currentItem)
                 }
 
             })
@@ -78,8 +78,8 @@ class MainActivity : AppCompatActivity() {
             .show(this, object : SelectorDialog.OnSelectListener {
                 override fun onSelect(data: Int) {
                     rowView.text = data.toString()
-                    gridViewPager.setPageRows(data)
-                    indicatorView.initIndicator(gridViewPager.adapter!!.count, gridViewPager.currentItem)
+                    gridPagerView.setPageRows(data)
+                    indicatorView.initIndicator(gridPagerView.adapter!!.count, gridPagerView.currentItem)
                 }
             })
     }

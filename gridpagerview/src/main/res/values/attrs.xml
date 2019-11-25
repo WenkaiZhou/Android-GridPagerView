@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="GridViewPager">
-        <attr name="gvp_pageColumns" format="integer|reference" />
-        <attr name="gvp_pageRows" format="integer|reference" />
+    <declare-styleable name="GridPagerView">
+        <attr name="gpv_pageColumns" format="integer|reference" />
+        <attr name="gpv_pageRows" format="integer|reference" />
     </declare-styleable>
 </resources>

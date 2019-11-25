@@ -23,7 +23,7 @@ implementation 'com.kevin:gridpagerview:1.0.0'
 ### 在layout.xml 中配置GridViewPager
 
 ```xml
-<com.kevin.gridpager.GridViewPager
+<com.kevin.gridpager.GridPagerView
     android:id="@+id/cate_page"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -58,16 +58,16 @@ class CategoryAdapter : ClickableGridViewAdapter<Category, CommonCategoryAdapter
 }
 ```
 
-### 初始化 GridViewPager
+### 初始化 GridPagerView
 
 ```kotlin
-gridViewPager.setGridViewAdapter(CategoryAdapter())
+gridPagerView.setGridViewAdapter(CategoryAdapter())
 // 设置数据
 val list: MutableList<Category> = mutableListOf()
 for (i in 0 until count) {
     list.add(Category("item $i"))
 }
-gridViewPager.setData(list)
+gridPagerView.setDataItems(list)
 ```
 
 ## 更多配置
@@ -88,11 +88,11 @@ gridViewPager.setData(list)
 
 ```kotlin
 // 设置单页列数
-gridViewPager.setPageColumns(columns)
+gridPagerView.setPageColumns(columns)
 // 设置单页行数
-gridViewPager.setPageRows(rows)
+gridPagerView.setPageRows(rows)
 // 设置数据
-gridViewPager.setData(list)
+gridPagerView.setData(list)
 ```
 
 ## License
