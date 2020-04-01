@@ -15,8 +15,8 @@
  */
 package com.kevin.gridpager.extras
 
+import android.support.v7.widget.RecyclerView
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
 import com.kevin.gridpager.GridViewAdapter
 import com.kevin.gridpager.R
 

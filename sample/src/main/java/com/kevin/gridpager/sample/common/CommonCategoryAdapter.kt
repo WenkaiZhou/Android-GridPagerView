@@ -16,13 +16,13 @@
 package com.kevin.gridpager.sample.common
 
 import android.graphics.Color
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
 import com.kevin.gridpager.extras.ClickableGridViewAdapter
 import com.kevin.gridpager.sample.R
 import com.kevin.gridpager.sample.entity.Category

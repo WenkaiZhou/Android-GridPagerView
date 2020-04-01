@@ -16,11 +16,10 @@
 package com.kevin.gridpager.sample
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.kevin.gridpager.GridPagerView
-import com.kevin.gridpager.sample.binding.BindingCategoryAdapter
 import com.kevin.gridpager.sample.common.CommonCategoryAdapter
 import com.kevin.gridpager.sample.entity.Category
 

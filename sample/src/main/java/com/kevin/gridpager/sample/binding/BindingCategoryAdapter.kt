@@ -1,9 +1,9 @@
 package com.kevin.gridpager.sample.binding
 
+import android.databinding.ViewDataBinding
 import android.graphics.Color
 import android.view.View
 import android.widget.Toast
-import androidx.databinding.ViewDataBinding
 import com.kevin.gridpager.extras.binding.BindingGridViewAdapter
 import com.kevin.gridpager.extras.binding.BindingViewHolder
 import com.kevin.gridpager.sample.BR

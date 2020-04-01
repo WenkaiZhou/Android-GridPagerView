@@ -18,11 +18,11 @@ package com.kevin.gridpager.sample
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.app.FragmentActivity
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import com.kevin.dialog.BaseDialog
 import com.kevin.wheel.WheelView
 

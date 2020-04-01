@@ -9,7 +9,7 @@
             type="com.kevin.gridpager.sample.entity.Category" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#00000000"
@@ -35,6 +35,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_image" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </layout>
