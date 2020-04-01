@@ -15,7 +15,13 @@
 **androidX**
 
 ```
-implementation 'com.kevin:gridpagerview:1.0.0'
+implementation 'com.kevin:gridpagerview:2.0.1'
+```
+
+**support**
+
+```
+implementation 'com.kevin:gridpagerview:1.0.1'
 ```
 
 ## 如何使用
