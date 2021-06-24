@@ -21,6 +21,7 @@ implementation 'com.zwenkai:gridpagerview:2.0.1'
 **support**[不再维护]
 
 ```
+// Jcenter
 implementation 'com.kevin:gridpagerview:1.0.1'
 ```
 
