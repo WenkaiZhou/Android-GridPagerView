@@ -1,3 +1,0 @@
-include ':sample', ':gridpagerview'
-
-rootProject.name='Android-GridPagerView'

@@ -172,7 +172,7 @@ class SelectorDialog : BaseDialog() {
             get() {
                 val dialog = SelectorDialog()
                 dialog.setGravity(Gravity.BOTTOM) // 设置宽度为屏幕宽度
-                    .setWidth(1f) // 设置黑色透明背景
+                    .setWidthRatio(1.0f) // 设置黑色透明背景
                     .setDimEnabled(true)
                     .setBackgroundColor(Color.WHITE) // 设置动画
                     .setAnimations(android.R.style.Animation_InputMethod)
