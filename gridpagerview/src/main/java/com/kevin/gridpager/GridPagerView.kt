@@ -35,9 +35,10 @@ class GridPagerView @JvmOverloads constructor(
     private val adapter: GridPagerAdapter = GridPagerAdapter()
 
     init {
-        val ta = context.obtainStyledAttributes(attrs, R.styleable.GridPagerView)
-        val pageColumns = ta.getInt(R.styleable.GridPagerView_gpv_pageColumns, DEFAULT_PAGE_COLUMN)
-        val pageRows = ta.getInt(R.styleable.GridPagerView_gpv_pageRows, DEFAULT_PAGE_ROW)
+        val a = context.obtainStyledAttributes(attrs, R.styleable.GridPagerView)
+        val pageColumns = a.getInt(R.styleable.GridPagerView_gpv_pageColumns, DEFAULT_PAGE_COLUMN)
+        val pageRows = a.getInt(R.styleable.GridPagerView_gpv_pageRows, DEFAULT_PAGE_ROW)
+        a.recycle()
         adapter.setPageColumnsAndRows(pageColumns, pageRows)
         setAdapter(adapter)
     }
