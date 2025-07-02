@@ -6,6 +6,7 @@ plugins {
 
 android {
     compileSdk = 30
+    namespace = "com.kevin.gridpager"
 
     defaultConfig {
         minSdk = 14
@@ -32,10 +33,5 @@ dependencies {
 }
 
 // Release maven configuration
-setProperty("POM_ARTIFACT_ID", "delegationadapter")
-//setProperty("POM_NAME", "DelegationAdapter")
-setProperty("VERSION_CODE", "26")
-setProperty("VERSION_NAME", "2.0.8")
-setProperty("POM_DESCRIPTION", "Delegation Adapter")
 
 apply(plugin = "com.vanniktech.maven.publish")

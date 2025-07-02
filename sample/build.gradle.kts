@@ -6,6 +6,7 @@ plugins {
 
 android {
     compileSdk = 32
+    namespace = "com.kevin.gridpager.sample"
 
     defaultConfig {
         applicationId = "com.kevin.gridpager.sample"
