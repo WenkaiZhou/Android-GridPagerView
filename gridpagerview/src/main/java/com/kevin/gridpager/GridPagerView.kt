@@ -17,6 +17,7 @@ package com.kevin.gridpager
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.MotionEvent
 import androidx.viewpager.widget.ViewPager
 
 /**
@@ -41,6 +42,24 @@ class GridPagerView @JvmOverloads constructor(
         a.recycle()
         adapter.setPageColumnsAndRows(pageColumns, pageRows)
         setAdapter(adapter)
+    }
+
+    override fun onTouchEvent(ev: MotionEvent): Boolean {
+        try {
+            return super.onTouchEvent(ev)
+        } catch (e: IllegalArgumentException) {
+            e.printStackTrace()
+        }
+        return false
+    }
+
+    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
+        try {
+            return super.onInterceptTouchEvent(ev)
+        } catch (e: IllegalArgumentException) {
+            e.printStackTrace()
+        }
+        return false
     }
 
     fun setPageColumns(columns: Int) {
