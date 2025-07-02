@@ -1,7 +1,7 @@
 # GridViewPager
 
 [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)
-[![mavenCentral](https://img.shields.io/badge/%20mavenCentral%20-2.0.1-5bc0de.svg?style=flat-square)](https://bintray.com/xuehuayous/maven/Android-GridPagerView/_latestVersion)
+[![mavenCentral](https://img.shields.io/badge/%20mavenCentral%20-2.0.2-5bc0de.svg?style=flat-square)](https://bintray.com/xuehuayous/maven/Android-GridPagerView/_latestVersion)
 [![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2014%2B%20-f0ad4e.svg?style=flat-square)](https://android-arsenal.com/api?level=14)
 
 让网格翻页开发变得更简单，配合dataBinding食用，真香！
@@ -15,7 +15,7 @@
 **androidX**
 
 ```
-implementation 'com.zwenkai:gridpagerview:2.0.1'
+implementation 'com.zwenkai:gridpagerview:2.0.2'
 ```
 
 **support**[不再维护]

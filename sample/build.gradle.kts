@@ -47,5 +47,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
     implementation("com.zwenkai:basedialog:1.1.4")
     implementation("com.zwenkai:wheelview:1.0.3")
-//    implementation("com.zwenkai:gridpagerview:2.0.1")
+//    implementation("com.zwenkai:gridpagerview:2.0.2")
 }
