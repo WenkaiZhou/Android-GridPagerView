@@ -88,7 +88,11 @@ internal class GridPagerAdapter : PagerAdapter() {
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
         view.setHasFixedSize(true)
-        val layoutManager = GridLayoutManager(context, pageColumns)
+        val layoutManager = object : GridLayoutManager(context, pageColumns) {
+            override fun canScrollVertically(): Boolean {
+                return false
+            }
+        }
         layoutManager.recycleChildrenOnDetach = true
         view.layoutManager = layoutManager
         val adapter = RecyclerViewAdapter(pageSize * position, gridAdapter)
